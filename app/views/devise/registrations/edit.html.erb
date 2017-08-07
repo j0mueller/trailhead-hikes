@@ -1,0 +1,47 @@
+
+<div class="row">
+  <div class="devise-form large-6 left column callout secondary">
+    <h4 class="text-center">Edit My Account</h4>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label :username %>
+        <%= f.text_field :username, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, "Password (6 characters minimum)" %>
+        <i>(leave blank if you don't want to change it)</i>
+        <%= f.password_field :password, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, "Confirm Password" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i>
+        <%= f.password_field :current_password, autocomplete: "off" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Update" %>
+      </div>
+    <% end %>
+  </div>
+  <div class="cancel large-6 right column">
+    <div class="inline-block">
+    <h4 class="">Unhappy?</h4>
+      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    </div>
+    <br><br>
+    <%= link_to "Back", :back %>
+  </div>
+</div>
