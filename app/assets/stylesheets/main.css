@@ -1,0 +1,35 @@
+.top-bar {
+  background-color: white;
+  height: 75px;
+
+}
+
+.top-bar-section {
+  color: #526d79;
+}
+
+.title {
+  color: white;
+  font-size: 40px;
+}
+
+.buttons {
+  display: inline-block;
+  margin: 1px;
+  width: 50px;
+  height: 20px;
+  background-color: blue;
+}
+
+.panorama {
+  width: 100%;
+  align-self: stretch;
+}
+
+.hike {
+  box-shadow: 8px 8px 5px #d3d3d3;
+}
+
+.hike-name, .hike-place {
+  display: inline;
+}

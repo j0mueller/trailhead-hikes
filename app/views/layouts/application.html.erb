@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TrailheadHikes</title>
+    <title>Trailhead</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,27 @@
   </head>
 
   <body>
+    <nav class="top-bar" data-topbar role="navigation">
+      <section class="top-bar-section">
+        <h1><a href="/">Trailhead</a></h1>
+      </section>
+
+      <section class="top-bar-section inline-block right">
+          <% if current_user %>
+            <i><%= link_to "My Lists", user_hikes_path %></i>
+            &nbsp; &nbsp;
+            <i><%= link_to current_user.username, user_path(current_user.id)%></i>
+            &nbsp; &nbsp;
+            <i><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></i>
+          <% else  %>
+            <i><%= link_to 'Create Account', new_user_registration_path %></i>
+            &nbsp; &nbsp;
+            <i><%= link_to "Sign In", new_user_session_path %></i>
+          <% end  %>
+      </section>
+    </nav>
+    <%= image_tag('panorama.png', class: "panorama") %>
+
     <%= yield %>
     <div id="app"></div>
   </body>
