@@ -1,0 +1,10 @@
+<div class="hike-show large-8 large-centered columns">
+  <h3><%= @hike.name %></h3>
+  <h5><%= @hike.location %></h5>
+  <p><%= @hike.description %></p>
+</div>
+<div class="large-8 large-centered columns">
+  <div class="button-group">
+    <%= button_to 'Add to Wishlist' %> &nbsp; &nbsp;<%= button_to 'Add to My Hikes' %>
+  </div>
+</div>

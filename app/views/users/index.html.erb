@@ -1,0 +1,10 @@
+<h3 class="text-center">All Users</h3>
+
+
+<div class="text-center">
+  <% @users.each do |user| %>
+    <p>
+      <%= user.username %> &nbsp; &nbsp;
+    </p>
+  <% end %>
+</div>

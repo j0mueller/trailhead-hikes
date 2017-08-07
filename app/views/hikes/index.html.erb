@@ -1,0 +1,14 @@
+
+<h1 class="text-center">Trails</h1>
+
+<br>
+<div class="row">
+  <div class="large-6 large-centered columns">
+  <% @hikes.each do |hike| %>
+    <div class="hike" >
+      <h3 class="hike-name"><%= link_to hike.name, hike_path(hike.id) %></h3><h5 class="hike-place">  , <%= hike.location %></h5>
+      <p><%= hike.description.truncate(120) %></p>
+    </div>
+  <% end %>
+  </div><br>
+</div>

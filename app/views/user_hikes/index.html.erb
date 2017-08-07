@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="wishlist small-6 columns text-center">
+    <h3>Wishlist</h3>
+    <% @wishlist = UserHike.where(user_id: current_user.id, list: "wishlist") %>
+    <% if @wishlist.empty? %>
+      <p>You haven't added any hikes to your wishlist yet.</p>
+    <% else %>
+      <% @wishlist.each do |item| %>
+        <i><%= item.hike.name %></i><br>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="my_hikes small-6 columns text-center">
+    <h3>My Hikes</h3>
+    <% @my_hikes = UserHike.where(user_id: current_user.id, list: "my_hikes") %>
+    <% if @my_hikes.empty? %>
+      <p>You haven't added any completed hikes yet.</p>
+    <% else %>
+      <% @my_hikes.each do |item| %>
+        <i><%= item.hike.name %></i><br>
+      <% end %>
+    <% end %>
+  </div>
+</div>
