@@ -4,8 +4,14 @@ Rails.application.routes.draw do
 
   root 'hikes#index'
 
-  resources :hikes, only: [:index, :show]
+  resources :hikes, only: [:index, :show, :new, :create]
   resources :users, only: [:index, :show]
   resources :user_hikes, only: [:index, :new, :create, :destroy]
+
+  namespace :api do
+    namespace :v1 do
+      resources :hikes, only: [:index, :new, :create]
+    end
+  end
 
 end

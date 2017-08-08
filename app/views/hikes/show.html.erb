@@ -1,10 +1,21 @@
 <div class="hike-show large-8 large-centered columns">
   <h3><%= @hike.name %></h3>
-  <h5><%= @hike.location %></h5>
+  <h5><%= "#{@hike.city}, #{@hike.state}, #{@hike.country}" %></h5>
+  <p> <%= "Difficulty: #{@hike.difficulty.upcase}" %> &nbsp; &nbsp; <%="Elevation Gain: #{@hike.elevation} ft" %> &nbsp; &nbsp;   <%= "Distance: #{@hike.distance} mi" %></p>
   <p><%= @hike.description %></p>
 </div>
+
 <div class="large-8 large-centered columns">
-  <div class="button-group">
-    <%= button_to 'Add to Wishlist' %> &nbsp; &nbsp;<%= button_to 'Add to My Hikes' %>
+  <div class="add-to-list">
+    <%= form_for @new_user_hike, method: :create, url: user_hikes_path, html: {class: "user_hike"} do |f| %>
+    <div class="row">
+      <%= f.hidden_field :user_id, value: @user %>
+      <%= f.hidden_field :hike_id, value: @hike %>
+      <div class="list">
+        <%= f.submit "Add to:" %> &nbsp;
+        <%= f.collection_radio_buttons(:list, [["wishlist", "Wishlist"] , ["my_hike", "My Hikes"]], :first, :last) %>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>
