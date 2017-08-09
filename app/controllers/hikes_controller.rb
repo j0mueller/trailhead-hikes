@@ -2,15 +2,13 @@ class HikesController < ApplicationController
   def index
     @hikes = Hike.all
     @ordered_hikes = Hike.all.order(country: :asc, name: :asc)
-    @new_hike = Hike.new
-    @countries = Hike::COUNTRIES
-    @difficulty_levels = ["EASY", "MODERATE", "HARD"]
   end
 
   def show
     @hike = Hike.find(params[:id])
-    @new_user_hike = UserHike.new
+    @wishlist = UserHike.new
     @user = current_user
+    @my_hike = UserHike.new
   end
 
   def new
@@ -28,7 +26,7 @@ class HikesController < ApplicationController
       flash[:alert] = "Your trail has not been added."
       @countries = Hike::COUNTRIES
       @difficulty_levels = ["EASY", "MODERATE", "HARD"]
-      render :index
+      render :new
     end
   end
 
