@@ -4,7 +4,8 @@ class WishlistsController < ApplicationController
   def create
     @user = current_user
     @hike = Hike.find(params[:user_hike][:hike_id])
-    if UserHike.where(user: @user, hike: @hike)
+    if UserHike.exists?(user: @user, hike: @hike)
+      @list =
       @existing = UserHike.where(user: @user, hike: @hike)
       flash[:notice] = "#{@hike.name} is already on one of your lists."
       redirect_to user_hikes_path
