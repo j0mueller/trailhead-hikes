@@ -7,13 +7,19 @@
 
 <div class="large-8 large-centered columns">
   <div class="add-to-list">
-    <%= form_for @new_user_hike, method: :create, url: user_hikes_path, html: {class: "user_hike"} do |f| %>
+    <%= form_for @wishlist, url: wishlists_path do |f| %>
     <div class="row">
-      <%= f.hidden_field :user_id, value: @user %>
-      <%= f.hidden_field :hike_id, value: @hike %>
-      <div class="list">
-        <%= f.submit "Add to:" %> &nbsp;
-        <%= f.collection_radio_buttons(:list, [["wishlist", "Wishlist"] , ["my_hike", "My Hikes"]], :first, :last) %>
+      <%= f.hidden_field :hike_id, value: @hike.id %>
+      <div class="">
+        <%= f.submit "Add to Wishlist" %>
+      </div>
+      <% end %>
+    </div>
+    <%= form_for @my_hike, url: my_hikes_path do |f| %>
+    <div class="row">
+      <%= f.hidden_field :hike_id, value: @hike.id %>
+      <div class="">
+        <%= f.submit "Add to My Hikes" %>
       </div>
       <% end %>
     </div>

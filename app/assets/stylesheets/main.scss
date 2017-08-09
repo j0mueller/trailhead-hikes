@@ -20,11 +20,19 @@
 }
 
 .buttons {
-  display: inline-block;
-  margin: 1px;
-  width: 50px;
-  height: 20px;
-  background-color: blue;
+  background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  // display: inline-block;
+  // margin: 1px;
+  // width: 50px;
+  // height: 20px;
+  // background-color: blue;
 }
 
 .panorama {
@@ -38,4 +46,39 @@
 
 .hike-name, .hike-place {
   display: inline;
+}
+
+.table-div {
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+
+.number {
+  text-align: center;
+}
+
+.end {
+  padding: 3px;
+}
+
+.float-right {
+  margin-right: 5rem;
+}
+
+.notice {
+  color: blue;
+  margin-top: 10px;
+}
+
+.alert {
+  color: red;
+  margin-top: 10px;
+}
+
+.panel {
+  display: inline-block;
+}
+
+.remove {
+  margin-left: 3px;
 }

@@ -1,12 +1,14 @@
 <div class="row">
-  <div class="wishlist small-6 columns text-center">
-    <h3>Wishlist</h3>
+  <div class="wishlist small-6 columns">
+    <h3 class="text-center">Wishlist</h3>
     <% @wishlist = UserHike.where(user_id: current_user.id, list: "wishlist") %>
     <% if @wishlist.empty? %>
       <p>You haven't added any hikes to your wishlist yet.</p>
     <% else %>
       <% @wishlist.each do |item| %>
-        <i><%= item.hike.name %></i><br>
+        <div class="row">
+          <div class="small-3 columns"><%= button_to "Add to My Hikes", user_hike_path(item.id), method: :patch %></div><div class="remove small-2 columns"> <%= button_to "Remove", user_hike_path(item.id), method: :delete %></div><%= link_to item.hike.name, hike_path(item.hike.id)%><br>
+        </div>
       <% end %>
     <% end %>
   </div>
@@ -18,7 +20,7 @@
       <p>You haven't added any completed hikes yet.</p>
     <% else %>
       <% @my_hikes.each do |item| %>
-        <i><%= item.hike.name %></i><br>
+        <i><%= link_to item.hike.name, hike_path(item.hike.id) %></i><br>
       <% end %>
     <% end %>
   </div>
