@@ -70,5 +70,5 @@ feature "User edits account" do
   #
   #   click_button 'Update'
   #   expect(page).to have_content "Your account has been updated successfully"
-  end
+  # end
 end
