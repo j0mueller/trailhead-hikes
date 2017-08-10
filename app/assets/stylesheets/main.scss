@@ -1,38 +1,12 @@
-.top-bar {
+// navbar and general
+.nav-wrapper {
   background-color: white;
-  height: 75px;
-
+  height: 40px;
+  padding-left: 1rem;
 }
 
-.top-bar-section {
-  color: #526d79;
-}
-
-.title {
-  color: white;
-  font-size: 40px;
-}
-
-.button {
-  width: 50px;
-  height: 20px;
-  background-color: blue;
-}
-
-.buttons {
-  background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-  // display: inline-block;
-  // margin: 1px;
-  // width: 50px;
-  // height: 20px;
-  // background-color: blue;
+.trailhead{
+  font-size: 80px;
 }
 
 .panorama {
@@ -40,14 +14,33 @@
   align-self: stretch;
 }
 
-.hike {
-  box-shadow: 8px 8px 5px #d3d3d3;
+.buttons {
+  display: inline-block;
 }
 
-.hike-name, .hike-place {
-  display: inline;
+.notice {
+  color: slateblue;
+  font-style: italic;
+  margin-top: 10px;
 }
 
+.alert {
+  color: red;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+// hike show page
+.onlist {
+  color: slateblue;
+  font-style: italic;
+}
+
+.remove {
+  margin-left: 12rem;
+}
+
+// hike index
 .table-div {
   margin-left: 10rem;
   margin-right: 10rem;
@@ -59,26 +52,4 @@
 
 .end {
   padding: 3px;
-}
-
-.float-right {
-  margin-right: 5rem;
-}
-
-.notice {
-  color: blue;
-  margin-top: 10px;
-}
-
-.alert {
-  color: red;
-  margin-top: 10px;
-}
-
-.panel {
-  display: inline-block;
-}
-
-.remove {
-  margin-left: 3px;
 }

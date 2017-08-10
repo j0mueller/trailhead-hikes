@@ -1,6 +1,6 @@
-<h2 class="text-center">Log in</h2>
+<h2 class="center-align">Log in</h2>
 
-<div class="devise-form small-8 small-centered large-6 large-centered column">
+<div class="devise-form container">
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %>
@@ -18,9 +18,10 @@
       <%= f.label :remember_me %>
     </div>
   <% end -%>
-
+  <br>
   <div class="actions">
-    <%= f.submit "Log in" %>
+    <%= f.submit "Log in", class:"btn blue darken-2" %>
   </div>
 <% end %>
 </div>
+<br><br>

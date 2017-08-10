@@ -1,6 +1,9 @@
 class MyHikesController < ApplicationController
   before_action :authenticate_user!
 
+  def show
+  end
+
   def create
     @user = current_user
     @hike = Hike.find(params[:user_hike][:hike_id])

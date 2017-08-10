@@ -9,29 +9,29 @@
   </head>
 
   <body>
-    <nav class="top-bar" data-topbar role="navigation">
-      <section class="top-bar-section">
-        <h1><a href="/">Trailhead</a></h1>
-      </section>
-
-      <section class="top-bar-section inline-block right">
-          <% if current_user %>
-            <i><%= link_to "My Lists", user_hikes_path %></i>
-            &nbsp; &nbsp;
-            <i><%= link_to current_user.username, user_path(current_user.id)%></i>
-            &nbsp; &nbsp;
-            <i><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></i>
-          <% else  %>
-            <i><%= link_to 'Create Account', new_user_registration_path %></i>
-            &nbsp; &nbsp;
-            <i><%= link_to "Sign In", new_user_session_path %></i>
-          <% end  %>
-      </section>
-    </nav>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo trailhead blue-text text-darken-3">Trailhead</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down blue-text">
+            <% if current_user %>
+              <li><%= link_to "My Lists", user_hikes_path, class:"blue-text text-darken-3"%></li>
+              &nbsp; &nbsp;
+              <li class="blue-text"><%= link_to current_user.username, user_path(current_user.id), class:"blue-text text-darken-3"%></li>
+              &nbsp; &nbsp;
+              <li class="blue-text"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"blue-text text-darken-3" %></li>
+            <% else  %>
+              <li class="blue-text"><%= link_to 'Create Account', new_user_registration_path, class:"blue-text text-darken-3" %></li>
+              &nbsp; &nbsp;
+              <li class="blue-text"><%= link_to "Sign In", new_user_session_path, class:"blue-text text-darken-3" %></li>
+            <% end  %>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <%= image_tag('wakatipu.png', class: "panorama") %>
-    <p class="notice text-center"><%= notice %></p>
-    <p class="alert text-center"><%= alert %></p>
-
+    <h4 class="notice center-align"><%= notice %></h4>
+    <h4 class="alert center-align"><%= alert %></h4>
 
     <%= yield %>
 
