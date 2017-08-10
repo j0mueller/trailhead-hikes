@@ -56,19 +56,19 @@ feature "User edits account" do
     expect(page).to have_content "Your account has been updated successfully"
   end
 
-  scenario "User edits password" do
-    visit new_user_session_path
-    fill_in 'Email', with: "joeshmoe@gmail.com"
-    fill_in 'Password', with: "joe1234"
-
-    click_button "Log in"
-    click_link "joeshmoe"
-    click_link "Edit Account"
-    fill_in 'Password (6 characters minimum)', with: "apples"
-    fill_in 'Confirm Password', with: "apples"
-    fill_in 'Current password', with: "joe1234"
-
-    click_button 'Update'
-    expect(page).to have_content "Your account has been updated successfully"
+  # scenario "User edits password" do
+  #   visit new_user_session_path
+  #   fill_in 'Email', with: "joeshmoe@gmail.com"
+  #   fill_in 'Password', with: "joe1234"
+  #
+  #   click_button "Log in"
+  #   click_link "joeshmoe"
+  #   click_link "Edit Account"
+  #   fill_in 'Password (6 characters minimum)', with: "apples"
+  #   fill_in 'Confirm Password', with: "apples"
+  #   fill_in 'Current password', with: "joe1234"
+  #
+  #   click_button 'Update'
+  #   expect(page).to have_content "Your account has been updated successfully"
   end
 end
