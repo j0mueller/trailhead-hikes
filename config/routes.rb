@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :user_hikes, only: [:index, :update, :destroy]
   resources :wishlists, only: [:create]
   resources :my_hikes, only: [:create]
+  resources :journals, only: [:create, :show, :update]
 
   namespace :api do
     namespace :v1 do

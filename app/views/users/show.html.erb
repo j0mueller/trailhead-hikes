@@ -1,13 +1,13 @@
-<h1 class="text-center">My Profile</h1>
+<h2 class="center-align">My Profile</h2>
 
 <br><br>
-<div class="row">
+<div class="row container center-align">
   <div class="large-6 large-centered columns">
     <h5>Username:  <%= @user.username %></h5>
     <h5>Email:  <%= @user.email %></h5>
     <br><br>
-    <div class="text-left">
+    <h5 class="">
       <%= link_to "Edit Account", edit_user_registration_path %>
-    </div>
+    </h5>
   </div>
 </div>

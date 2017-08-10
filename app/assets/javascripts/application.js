@@ -12,7 +12,9 @@
 //
 //= require rails-ujs
 //= require jquery
-//= require foundation
+//= require materialize
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(document).ready(function() {
+  $('select').material_select();
+});

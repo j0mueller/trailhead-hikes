@@ -1,26 +1,28 @@
 <div class="row">
-  <div class="wishlist small-6 columns">
-    <h3 class="text-center">Wishlist</h3>
-    <% @wishlist = UserHike.where(user_id: current_user.id, list: "wishlist") %>
-    <% if @wishlist.empty? %>
-      <p class="text-center">You haven't added any hikes to your wishlist yet.</p>
-    <% else %>
-      <% @wishlist.each do |item| %>
-        <div class="row">
-          <div class="small-3 columns"><%= button_to "Add to My Hikes", user_hike_path(item.id), method: :patch %></div><div class="remove small-2 columns"> <%= button_to "Remove", user_hike_path(item.id), method: :delete %></div><%= link_to item.hike.name, hike_path(item.hike.id)%><br>
-        </div>
+  <div class="wishlist s6 col center-align">
+    <h3 class="center-align">Wishlist</h3>
+    <div class="center-align">
+      <% @wishlist = UserHike.where(user_id: current_user.id, list: "wishlist") %>
+      <% if @wishlist.empty? %>
+        <h5 class="">There are no hikes on your wishlist.</h5>
+      <% else %>
+        <% @wishlist.each do |item| %>
+          <div class="row">
+              <%= button_to "Remove", user_hike_path(item.id), method: :delete, class:"remove btn grey left-align col" %><h5 class="col"><%= link_to item.hike.name, hike_path(item.hike.id), class:"center-align"%></h5><%= button_to "Add to My Hikes", user_hike_path(item.id), method: :patch, class:"btn blue darken-2 right-align col" %><br>
+          </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 
-  <div class="my_hikes small-6 columns text-center">
+  <div class="my_hikes s6 col center-align">
     <h3>My Hikes</h3>
     <% @my_hikes = UserHike.where(user_id: current_user.id, list: "my_hikes") %>
     <% if @my_hikes.empty? %>
-      <p>You haven't added any completed hikes yet.</p>
+      <h5>You haven't added any completed hikes yet.</h5>
     <% else %>
       <% @my_hikes.each do |item| %>
-        <i><%= link_to item.hike.name, hike_path(item.hike.id) %></i><br>
+        <h5><%= link_to item.hike.name, hike_path(item.hike.id) %></h5><br>
       <% end %>
     <% end %>
   </div>

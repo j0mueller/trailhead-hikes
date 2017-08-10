@@ -1,39 +1,38 @@
-<div class="small-8 small-centered columns">
-  <div class="callout primary">
+<div class="container">
+  <div class="">
     <h3>Add a Trail</h3>
     <%= form_for @new_hike, method: :create, url: hikes_path, html: {class: "new_hike"} do |f| %>
-      <div class="field">
+      <div class="input-field">
         <%= f.text_field :name, placeholder: "Trail Name" %>
       </div>
 
-      <div class="field">
-        <%= f.label "Country" %>
+      <div class="input-field">
         <%= f.select :country, @countries %>
       </div>
 
-      <div class="field">
+      <div class="input-field">
         <%= f.text_field :state, placeholder: "State (e.g. 'GA') or Province"%>
       </div>
 
-      <div class="field">
+      <div class="input-field">
         <%= f.text_field :city, placeholder: "City, Region, or Park Name" %>
       </div>
 
-      <div class="field">
-        <%= f.label :difficulty %>
+      <div class="input-field">
         <%= f.select :difficulty, @difficulty_levels %>
+
       </div>
 
-      <div class="field">
+      <div class="input-field">
         <%= f.number_field :distance, class: :text_field, step: :any, placeholder: "Distance (mi)" %>
       </div>
 
-      <div class="field">
+      <div class="input-field">
         <%= f.number_field :elevation, placeholder: "Elevation Gain (ft)" %>
       </div>
 
-      <div class="field">
-        <%= f.text_area :description, placeholder: "Description", size: "20x10" %>
+      <div class="input-field">
+        <%= f.text_area :description, placeholder: "Description", class:"materialize-textarea" %>
       </div>
 
       <div class="actions">
@@ -41,4 +40,5 @@
       </div>
     <% end %>
   </div>
+  <br><br>
 </div>

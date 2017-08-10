@@ -45,10 +45,14 @@ class HikeContainer extends Component {
     })
 
     const columns = [{
+        Header: 'ID',
+        accessor: 'id',
+        show: false
+      }, {
         Header: 'Name',
         accessor: 'name',
         minWidth: 150,
-        Cell: props => <a href={`/hikes/id`}>{props.value}</a>
+        Cell: props => <a href={`/hikes/${props.original.id}`}>{props.value}</a>
       }, {
         Header: 'Country',
         accessor: 'country',
