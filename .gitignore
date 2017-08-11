@@ -24,3 +24,5 @@
 /coverage
 
 .env
+
+/public/uploads

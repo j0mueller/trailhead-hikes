@@ -21,9 +21,20 @@ class WishlistsController < ApplicationController
     end
   end
 
+  def update
+    @user_hike = UserHike.find(params[:id])
+    @user_hike.update(list: "my_hikes")
+    if @user_hike.save
+      flash[:notice] = "#{@user_hike.hike.name} has been added to My Hikes."
+      redirect_to user_hikes_path
+    else
+      flash[:alert] = "#{@user_hike.hike.name} could not be added to My Hikes."
+    end
+  end
+
   private
 
-  def user_hike_params
-    params.require(:user_hike).permit(:hike_id)
+  def wishlist_params
+    params.require(:user_hike).permit(:user_id, :hike_id, :list)
   end
 end
