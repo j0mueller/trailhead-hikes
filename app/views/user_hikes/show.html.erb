@@ -1,0 +1,19 @@
+<div class="journal center-align"><br><h2>Trip Journal</h2><br></div>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <div class="card">
+        <div class="card-image">
+          <%= image_tag @user_hike.photo, class:"photo" %>
+        </div>
+        <div class="card-content">
+          <span class="card-title"><%= @user_hike.hike.name %></span>
+          <div><%= @user_hike.trip_details %></div>
+        </div>
+        <div class="card-action">
+          <%= link_to "Add/Edit Trip Details",  edit_user_hike_path(@user_hike), class:"btn blue darken-2 center-align" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

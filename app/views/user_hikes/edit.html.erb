@@ -1,0 +1,15 @@
+<div class="journal center-align"><br><h2>Trip Journal</h2><br></div>
+<div class="container">
+  <h2><%= @user_hike.hike.name %><h2>
+  <div class="add-trip-details">
+    <%= form_for @user_hike, url: user_hike_path(@user_hike), method: :patch do |f| %>
+    <%= f.text_area :trip_details, class:"input-field trip-details", placeholder: "Add trip details" %>
+    <div class="photo-field">
+      <%= f.label :photo, "Add a photo" %>
+      <%= f.file_field :photo, class:"btn blue darken-2" %>
+    </div>
+    <%= f.submit "Add", class:"waves-effect waves-light btn blue darken-2" %>
+    <% end %>
+    <br><br>
+  </div>
+</div>

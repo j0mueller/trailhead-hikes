@@ -1,3 +1,5 @@
+<%= image_tag('wakatipu.png', class: "panorama") %>
+<br><br>
 <div class="z-depth-4 container">
   <br>
   <div class="hike-show container">
@@ -6,12 +8,14 @@
     <h6> <%= "Difficulty: #{@hike.difficulty.upcase}" %> &nbsp; &nbsp; <%="Elevation Gain: #{@hike.elevation} ft" %> &nbsp; &nbsp;   <%= "Distance: #{@hike.distance} mi" %></h6>
     <h5><%= @hike.description %></h5>
   </div>
-  <br><br>
-  <div class="row">
+  <br>
+  <div class="row center-align">
     <% if UserHike.find_by(user: current_user, hike: @hike, list: "wishlist") %>
-      <h5 "col s6 right-align onlist">This trail is on your wishlist</p>  <%= form_for @my_hike, url: my_hikes_path do |f| %>
+      <div><h5 "center-align onlist">This trail is on your wishlist</h5></div>
+      <br>
+      <%= form_for @my_hike, url: my_hikes_path do |f| %>
       <%= f.hidden_field :hike_id, value: @hike.id %>
-      <div class="col s6 left-align">
+      <div class="center-align">
         <%= f.submit "Add to My Hikes", class:"waves-effect waves-light btn blue darken-2" %>
       </div>
       <% end %>
@@ -34,3 +38,4 @@
   </div>
   <br>
 </div>
+<br><br>

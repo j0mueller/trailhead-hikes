@@ -14,13 +14,15 @@
  *= require_tree .
  *= require_self
  */
+ // require react-table/react-table.css
+
 
 
 @import "materialize/components/color";
 $primary-color: color("blue", "darken-3") !default;
 $navbar-height: 80px !default;
 $navbar-font-size: 1.5rem !default;
-$navbar-font-color: color("light-blue", "darken-5") !default;
+$navbar-font-color: #45546d  !default; //color("light-blue", "darken-5")
 $navbar-brand-font-size: 3.3rem !default;
 $input-focus-color: color("blue", "accent-1")!default;
 @import "materialize";

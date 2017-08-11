@@ -29,9 +29,21 @@
         </div>
       </nav>
     </div>
-    <%= image_tag('wakatipu.png', class: "panorama") %>
-    <h4 class="notice center-align"><%= notice %></h4>
-    <h4 class="alert center-align"><%= alert %></h4>
+
+
+    <% if flash[:notice] %>
+      <script type="text/javascript">
+      Materialize.toast('<%= notice %>', 5000)
+      </script>
+    <% elsif flash[:error] %>
+      <script type="text/javascript">
+      Materialize.toast('<%= flash[:error] %>', 5000)
+      </script>
+    <% elsif flash[:alert] %>
+      <script type="text/javascript">
+      Materialize.toast('<%= alert %>', 5000)
+      </script>
+    <% end %>
 
     <%= yield %>
 
