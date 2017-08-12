@@ -5,8 +5,8 @@
     <%= form_for @user_hike, url: user_hike_path(@user_hike), method: :patch do |f| %>
     <%= f.text_area :trip_details, class:"input-field trip-details", placeholder: "Add trip details" %>
     <div class="photo-field">
-      <%= f.label :photo, "Add a photo" %>
       <%= f.file_field :photo, class:"btn blue darken-2" %>
+      <%= f.label :photo, "Add a photo (max 800kb)", class:"photo-field" %>
     </div>
     <%= f.submit "Add", class:"waves-effect waves-light btn blue darken-2" %>
     <% end %>
