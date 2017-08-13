@@ -11,7 +11,7 @@
         <% @wishlist.each do |item| %>
           <div class="row left-align">
             <div class="tooltip">
-              <%= button_to " - ", user_hike_path(item.id), method: :delete, class:"remove btn grey col " %>
+              <%= button_to " - ", user_hike_path(item.id), method: :delete, class:"remove btn grey col" %>
               <span class="tooltiptext left">&nbsp;&nbsp; Remove &nbsp;&nbsp;</span>
             </div>
             <div class="tooltip">
