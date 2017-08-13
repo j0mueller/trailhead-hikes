@@ -1,24 +1,39 @@
 <%= image_tag('wakatipu.png', class: "panorama") %>
 <div class="row">
-  <div class="wishlist s6 col center-align">
+  <div class="wishlist col s6 center-align">
     <h3 class="center-align">Wishlist</h3>
-    <div class="center-align">
+    <p class="center-align">Select to View Trail Details</p>
+    <br>
       <% @wishlist = UserHike.where(user_id: current_user.id, list: "wishlist") %>
       <% if @wishlist.empty? %>
         <h5 class="">There are no hikes on your wishlist.</h5>
       <% else %>
         <% @wishlist.each do |item| %>
-          <div class="row">
-              <%= button_to "Remove", user_hike_path(item.id), method: :delete, class:"remove btn grey left-align col" %><h5 class="col"><%= link_to item.hike.name, hike_path(item.hike.id), class:"center-align"%></h5>
-              <%= button_to "Add to My Hikes", wishlist_path(item.id), method: :patch, class:"btn blue darken-2 right-align col" %><br>
+          <div class="row left-align">
+            <div class="tooltip">
+              <%= button_to " - ", user_hike_path(item.id), method: :delete, class:"remove btn grey col" %>
+              <span class="tooltiptext left">&nbsp;&nbsp; Remove &nbsp;&nbsp;</span>
+            </div>
+            <div class="tooltip">
+              <%= button_to " + ", wishlist_path(item.id), method: :patch, class:"add btn blue darken-2 col" %>
+              <span class="tooltiptext">&nbsp;&nbsp; Add to My Hikes &nbsp;&nbsp;</span>
+            </div>
+            <div>
+            <h5 class="">
+              <%= link_to item.hike.name, hike_path(item.hike.id), class:""%>
+            </h5>
+          </div>
+            <br>
           </div>
         <% end %>
       <% end %>
-    </div>
+
   </div>
 
-  <div class="my_hikes s6 col center-align">
+  <div class="my_hikes col s6 center-align">
     <h3>My Hikes</h3>
+    <p>Select to View/Add Trip Journal</p>
+    <br>
     <% @my_hikes = UserHike.where(user_id: current_user.id, list: "my_hikes") %>
     <% if @my_hikes.empty? %>
       <h5>You haven't added any completed hikes yet.</h5>
