@@ -37,7 +37,38 @@
 }
 
 .remove {
+  margin-right: 1rem;
   margin-left: 12rem;
+}
+
+.add {
+  margin-right: 1.5rem;
+}
+
+.tooltip {
+    position: relative;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 1;
+}
+
+.add-remove {
+  display: inline-block;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }
 
 // hike index
