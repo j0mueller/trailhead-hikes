@@ -1,7 +1,14 @@
 
 <%= image_tag('wakatipu.png', class: "panorama") %>
 <h4 class="right-align container"> <%= link_to "Add a Trail", new_hike_path  %></h4>
+<br>
 
-<input id="pac-input" class="controls" type="text" placeholder="Search Box">
+<input id="pac-input" class="controls" type="text" placeholder="Search (example: 'hiking trails near Denver')">
 <div id="map"></div>
+<div id="right-panel">
+  <h2>Results</h2>
+  <ul id="places"></ul>
+  <button id="more">More results</button>
+</div>
+
 <div id="app" class=""></div>

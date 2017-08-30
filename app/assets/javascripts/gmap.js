@@ -20,6 +20,7 @@ function initAutocomplete() {
   // more details for that place.
   searchBox.addListener('places_changed', function() {
     var places = searchBox.getPlaces();
+    var placesList = document.getElementById('places');
 
     if (places.length == 0) {
       return;
@@ -33,6 +34,7 @@ function initAutocomplete() {
 
     // For each place, get the icon, name and location.
     var bounds = new google.maps.LatLngBounds();
+
     places.forEach(function(place) {
       if (!place.geometry) {
         console.log("Returned place contains no geometry");
@@ -46,6 +48,8 @@ function initAutocomplete() {
         scaledSize: new google.maps.Size(25, 25)
       };
 
+      placesList.innerHTML += '<li>' + place.name + '</li>';
+
       // Create a marker for each place.
       markers.push(new google.maps.Marker({
         map: map,
@@ -53,6 +57,7 @@ function initAutocomplete() {
         title: place.name,
         position: place.geometry.location
       }));
+
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -63,4 +68,5 @@ function initAutocomplete() {
     });
     map.fitBounds(bounds);
   });
+
 }
