@@ -3,7 +3,11 @@
   background-color: white;
   height: 40px;
   padding-left: 1rem;
+}
 
+.navbar {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 .trailhead{
@@ -13,7 +17,27 @@
 .panorama {
   width: 100%;
   align-self: stretch;
+  margin-bottom: -5px;
+  padding: 0;
 }
+
+.options {
+  width: 100%;
+  background-color: #ffffff;
+  padding-bottom: 1rem;
+}
+
+.add-trail {
+  background-color: #ffffff;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 1rem;
+}
+
+.btn {
+  background-color: #1565c0;
+}
+
 
 .buttons {
   display: inline-block;

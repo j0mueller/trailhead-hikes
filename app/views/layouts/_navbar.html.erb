@@ -1,0 +1,31 @@
+<div class="row navbar">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo trailhead blue-text text-darken-3">Trailhead</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down blue-text">
+        <% if current_user %>
+          <li><%= link_to "My Lists", user_hikes_path, class:"blue-text text-darken-3"%></li>
+          &nbsp; &nbsp;
+          <li class="blue-text"><%= link_to current_user.username, user_path(current_user.id), class:"blue-text text-darken-3"%></li>
+          &nbsp; &nbsp;
+          <li class="blue-text"><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class:"blue-text text-darken-3" %></li>
+        <% else  %>
+          <li class="blue-text"><%= link_to 'Create Account', new_user_registration_path, class:"blue-text text-darken-3" %></li>
+          &nbsp; &nbsp;
+          <li class="blue-text"><%= link_to "Sign In", new_user_session_path, class:"blue-text text-darken-3" %></li>
+        <% end  %>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div><%= image_tag('wakatipu.png', class: "panorama")%></div>
+<div class="row options">
+  <div class="col s12">
+    <ul class="">
+      <li class="col s4 center"><%= link_to 'BROWSE', hikes_path %></li>
+      <li class="col s4 center"><%= link_to 'SEARCH', "layouts/gmap" %></li>
+      <li class="col s4 center"><%= link_to "ADD", new_hike_path  %></li>
+    </ul>
+  </div>
+</div>

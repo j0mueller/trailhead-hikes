@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="">
-    <h3>Add a Trail</h3>
-    <%= form_for @new_hike, method: :create, url: hikes_path, html: {class: "new_hike"} do |f| %>
+  <h3 class="center">Add a Trail</h3>
+    <div class="add-trail">
+      <%= form_for @new_hike, method: :create, url: hikes_path, html: {class: "new_hike"} do |f| %>
       <div class="input-field">
         <%= f.text_field :name, placeholder: "Trail Name" %>
       </div>
@@ -36,7 +36,7 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "Add"%>
+        <%= f.submit "Add", class: "btn"%>
       </div>
     <% end %>
   </div>
