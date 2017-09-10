@@ -24,7 +24,12 @@
   <div class="col s12">
     <ul class="">
       <li class="col s4 center"><%= link_to 'BROWSE', hikes_path %></li>
-      <li class="col s4 center"><%= link_to 'SEARCH', "layouts/gmap" %></li>
+      <li class="col s4 center">
+        <a class="tooltip search-link">
+          <span class="tooltiptext search-link">Coming Soon</span>
+          SEARCH
+        </a>
+      </li>
       <li class="col s4 center"><%= link_to "ADD", new_hike_path  %></li>
     </ul>
   </div>
