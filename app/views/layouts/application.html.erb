@@ -28,8 +28,8 @@
     <% end %>
 
     <%= yield %>
-  
-  <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCTSBW3qWtSCO8JDTj4cqd3rUKNcPms4Q&libraries=places&callback=initAutocomplete" async defer>
+
+  <script  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&libraries=places&callback=initAutocomplete" async defer>
   </script>
   </body>
 </html>
