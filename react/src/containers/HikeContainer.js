@@ -77,6 +77,7 @@ class HikeContainer extends Component {
     let table = <ReactTable
                   data={this.state.hikes}
                   columns={columns}
+                  defaultPageSize={10}
                 />
 
     return (
