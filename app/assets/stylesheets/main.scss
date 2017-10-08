@@ -136,26 +136,18 @@
 
 }
 
-.journal {
-  background-color: #45546d;
-  color: white;
-  font-style: italic;
-  padding-bottom: 10rem;
+.date-column {
+  width: 8rem;
 }
 
-.jrnl {
-  background-color: #f2f4f7;
+.fa {
+  padding-right: .5rem;
 }
 
 body {
   background-color: #f2f4f7;
 }
 
-tr {
-  display: inline-block;
+td {
+  vertical-align: top;
 }
-
-.date-column {
-  width: 50px;
-}
-//#01579b;

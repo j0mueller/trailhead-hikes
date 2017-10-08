@@ -1,21 +1,33 @@
-<div class="jrnl container">
-  <div class="row">
-    <div class="col s8">
-      <table class="table ">
-        <tr class="">
-          <th class="heading small-centered">Date</th><th class="heading small-centered">Journal Entry</th>
+<div class="container">
+
+  <table id="journal" class="table">
+    <thead>
+      <tr>
+        <th class="date-column">Date</th>
+        <th></th>
+        <th></th>
+        <th>Journal Entry</th>
+      </tr>
+    </thead>
+    <body>
+      <% @journal_entries.each do |entry| %>
+        <tr>
+          <td class="date-column"><%= entry.date.strftime("%Y-%m-%d") %></td>
+          <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
+          <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+          <td><%= entry.entry %></td>
         </tr>
-        <% @journal_entries.each do |entry| %>
-          <tr class="">
-            <td class="date-column"><%= entry.date %></td>
-            <td><%= entry.entry %></td>
-          </tr>
-        <% end %>
-      </table>
-      <%= link_to "Add new journal entry", new_user_hike_journal_entry_path %>
-    </div>
-    <div class="col s4">
-      <p>Photo album placeholder</p>
-    </div>
+      <% end %>
+    </body>
+  </table>
+  <br>
+
+  <div class="">
+    <%= link_to "Add new journal entry", new_user_hike_journal_entry_path %>
   </div>
+
+  <div class="">
+    <p>Photo album placeholder</p>
+  </div>
+
 </div>
