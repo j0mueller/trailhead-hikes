@@ -1,0 +1,15 @@
+<div class="">
+  <%= form_for [@user_hike, @journal_entry] do |f| %>
+  <div class="row">
+    <div class="col s2">
+      <%= f.date_field :date, class:"date_field", placeholder: "Date" %>
+    </div>
+    <div class="col s8">
+      <%= f.text_area :entry, placeholder: "Trip details" %>
+    </div>
+    <div class="col s2">
+      <%= f.submit "Save", class:"waves-effect waves-light btn blue darken-2" %>
+    </div>
+  </div>
+  <% end %>
+</div>
