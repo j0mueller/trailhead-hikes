@@ -39,7 +39,7 @@
       <h5>You haven't added any completed hikes yet.</h5>
     <% else %>
       <% @my_hikes.each do |item| %>
-        <h5><%= link_to item.hike.name, user_hike_path(item) %></h5> <br>
+        <h5><%= link_to item.hike.name, user_hike_journal_entries_path(item.id) %></h5> <br>
       <% end %>
     <% end %>
   </div>

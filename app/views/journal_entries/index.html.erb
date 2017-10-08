@@ -1,0 +1,21 @@
+<div class="jrnl container">
+  <div class="row">
+    <div class="col s8">
+      <table class="table ">
+        <tr class="">
+          <th class="heading small-centered">Date</th><th class="heading small-centered">Journal Entry</th>
+        </tr>
+        <% @journal_entries.each do |entry| %>
+          <tr class="">
+            <td class="date-column"><%= entry.date %></td>
+            <td><%= entry.entry %></td>
+          </tr>
+        <% end %>
+      </table>
+      <%= link_to "Add new journal entry", new_user_hike_journal_entry_path %>
+    </div>
+    <div class="col s4">
+      <p>Photo album placeholder</p>
+    </div>
+  </div>
+</div>

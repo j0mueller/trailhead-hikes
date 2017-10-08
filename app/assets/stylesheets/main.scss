@@ -140,10 +140,22 @@
   background-color: #45546d;
   color: white;
   font-style: italic;
+  padding-bottom: 10rem;
+}
+
+.jrnl {
+  background-color: #f2f4f7;
 }
 
 body {
   background-color: #f2f4f7;
 }
 
+tr {
+  display: inline-block;
+}
+
+.date-column {
+  width: 50px;
+}
 //#01579b;

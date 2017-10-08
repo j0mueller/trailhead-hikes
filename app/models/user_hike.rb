@@ -1,6 +1,7 @@
 class UserHike < ApplicationRecord
   belongs_to :user
   belongs_to :hike
+  has_many   :journal_entries
   validates :list, presence: true, inclusion: { in: ["wishlist", "my_hikes"] }
   validate :photo_size_validation
   mount_uploader :photo, PhotoUploader

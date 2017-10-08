@@ -6,6 +6,8 @@ class UserHikesController < ApplicationController
 
   def show
     @user_hike = UserHike.find(params[:id])
+    @journal_entries = JournalEntry.where(user_hike_id: @user_hike)
+    @new_journal_entry = JournalEntry.new
   end
 
   def edit
