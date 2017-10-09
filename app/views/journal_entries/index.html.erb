@@ -13,8 +13,8 @@
       <% @journal_entries.each do |entry| %>
         <tr>
           <td class="date-column"><%= entry.date.strftime("%Y-%m-%d") %></td>
-          <td><i class="fa fa-pencil" aria-hidden="true"></i></td>
-          <td><i class="fa fa-trash" aria-hidden="true"></i></td>
+          <td><a><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+          <td><a><i class="fa fa-trash" aria-hidden="true"></i><a></td>
           <td><%= entry.entry %></td>
         </tr>
       <% end %>
