@@ -13,11 +13,26 @@
       <% @journal_entries.each do |entry| %>
         <tr>
           <td class="date-column"><%= entry.date.strftime("%Y-%m-%d") %></td>
-          <td><a><i class="fa fa-pencil" aria-hidden="true"></i></a></td>
-          <td><a><i class="fa fa-trash" aria-hidden="true"></i><a></td>
           <td><%= entry.entry %></td>
+          <td> <%= link_to '<i class="fa fa-pencil" aria-hidden="true"></i>'.html_safe, journal_entry_path(entry), method: :udpate, remote: :true %></td>
+          <td> <%= link_to '<i class="fa fa-trash" aria-hidden="true"></i>'.html_safe, journal_entry_path(entry), data: { confirm: 'Are you sure?' }, method: :delete, remote: :true %></td>
         </tr>
       <% end %>
+      </tr>
+      <tr>
+        <%= form_for [@user_hike, @journal_entry] do |f| %>
+          <td class="date-column">
+            <%= f.date_field :date, class:"date_field", placeholder: "Date" %>
+          </td>
+          <td>
+            <%= f.text_area :entry, placeholder: "Trip details" %>
+          </td>
+          <td>
+            <%= f.submit "Save", class:"waves-effect waves-light btn blue darken-2" %>
+          </td>
+          <td></td>
+        <% end %>
+      </tr>
     </body>
   </table>
   <br>

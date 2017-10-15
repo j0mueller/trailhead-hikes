@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :user_hikes, only: [:index, :update, :destroy, :show, :edit] do
     resources :journal_entries, only: [:index, :new, :create]
   end
-  resources :journal_entries, only: [:show, :update, :destroy, :edit]
+  resources :journal_entries, only: [:show, :update, :destroy]
   resources :wishlists, only: [:create, :update]
   resources :my_hikes, only: [:create]
   resources :gmaps, only: [:new]
