@@ -4,6 +4,7 @@ class JournalEntriesController < ApplicationController
   def index
     @user_hike = UserHike.find(params[:user_hike_id])
     @journal_entries = @user_hike.journal_entries
+    @journal_entry = JournalEntry.new
   end
 
   def show
@@ -29,10 +30,6 @@ class JournalEntriesController < ApplicationController
       flash[:alert] = "Failed to save journal entry."
       render :new
     end
-  end
-
-  def edit
-    @journal_entry = JournalEntry.find(params[:id])
   end
 
   def update
